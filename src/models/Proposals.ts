@@ -1,4 +1,5 @@
 import mongoose, { Schema, model, models } from 'mongoose';
+import Client from './Client';
 
 const ProposalSchema = new Schema(
   {
@@ -20,4 +21,4 @@ const ProposalSchema = new Schema(
   { timestamps: true }
 );
 
-export default models.Proposal || model('Proposal', ProposalSchema);
+export default models.Proposal || mongoose.model('Proposal', ProposalSchema);

@@ -13,12 +13,15 @@ export const connectDB = async () => {
   if (isConnected) return;
 
   try {
-    await mongoose.connect(MONGO_URL, {
-      dbName: 'client-portal',
-      bufferCommands: false,
-    });
-    isConnected = true;
-    console.log('✅ MongoDB connected successfully');
+    if (mongoose.connection.readyState === 0) {
+      await mongoose.connect(MONGO_URL, {
+        dbName: 'client-portal',
+        bufferCommands: false,
+      });
+      isConnected = true;
+      console.log('✅ MongoDB connected successfully');
+    }
+
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
     throw new Error('Could not connect to MongoDB');

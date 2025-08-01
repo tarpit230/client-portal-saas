@@ -1,3 +1,4 @@
+
 import mongoose, { Schema, model, models } from 'mongoose';
 
 const ClientSchema = new Schema(
@@ -13,4 +14,6 @@ const ClientSchema = new Schema(
   { timestamps: true }
 );
 
-export default models.Client || model('Client', ClientSchema);
+export const getClientModel = () => {
+  return models.Client || model('Client', ClientSchema);
+};

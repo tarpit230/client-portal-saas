@@ -1,10 +1,10 @@
+import Client from '@/models/Client';
 import Proposal from '@/models/Proposals';
 import { connectDB } from '@/lib/db';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/options'; // Adjust the path if your authOptions is elsewhere
 import { NextResponse } from 'next/server';
 import User from '@/models/User';
-import Client from '@/models/Client';
 
 export async function GET() {
   await connectDB();

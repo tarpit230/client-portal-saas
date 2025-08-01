@@ -33,7 +33,7 @@ export default function LoginPage() {
         <input type="email" placeholder="Email" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} required className="w-full border p-2 rounded" />
         <input type="password" placeholder="Password" value={form.password} onChange={e => setForm({ ...form, password: e.target.value })} required className="w-full border p-2 rounded" />
         {error && <p className="text-red-500 text-sm">{error}</p>}
-        <button type="submit" className="bg-teal-600 text-white px-4 py-2 rounded">Login</button>
+        <button type="submit" className="cursor-pointer bg-teal-600 text-white px-4 py-2 rounded">Login</button>
       </form>
     </main>
   );
